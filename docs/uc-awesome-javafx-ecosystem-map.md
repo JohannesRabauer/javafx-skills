@@ -23,11 +23,13 @@ The AwesomeJavaFX README currently contains these high-signal sections:
 | Controls, forms, validation, preferences | ControlsFX, FormsFX, FXForm2, FXValidation, ValidatorFX, PreferencesFX, SuggesterFX |
 | Theming, icons, and styling | BootstrapFX, JMetro, JFoenix, MaterialFX, MonetFX, Ikonli, FontAwesomeFX, CssFX |
 | Desktop shell and windowing | AnchorFX, DesktopPaneFX, TabPanePro, StagePro, CustomStage, FXTrayIcon, FXTaskbarProgressBar |
+| Third-party controls and productivity widgets | ControlsFX, FormsFX, FXForm2, ValidatorFX, PreferencesFX, RichTextFX, GemsFX, FXRibbon, Toggle Switch |
 | Charts, dashboards, and scientific views | ChartFx, Medusa, TilesFX, JavaFX Dashboard, Orson Charts, FlexGanttFX, JavaFX DataViewer |
 | Rich text, documents, and editors | RichTextFX, RichTextArea, AsciidocFX, PDFsam Basic, EPUBCheckFX, graph editor, Mindolph |
 | Web, browser, and maps integration | JxBrowser, Webview Debugger, GMapFX, Gluon Maps, javafx-d3, jpro, WebFX |
 | Developer tooling and diagnostics | Scenic View, Component-Inspector, redux-javafx-devtool, Gluon Scene Builder, e(fx)clipse, JStackFX |
 | Testing, packaging, and updates | TestFX, assertj-javafx, TestFX-dsl, FXLauncher, Update4j, Getdown, Maven jpackage Template |
+| Terminal, workflow, and 3D modeling tools | JediTermFX, graph editor, VWorkflows, JFXNodeMapper, JCSG, JFXScad, FXyz |
 | Real-world app blueprints | binjr, Bounding Box Editor, Everest, FXDesktopSearch, HMCL, Recaf, XR3Player, WavesFX |
 | Calendar, scheduling, and planning | CalendarFX, FlexGanttFX, SkedPal, PI-Rail-FX |
 | Gestures and touch interaction | GestureFX, TuioFX |

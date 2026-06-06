@@ -38,6 +38,12 @@ ecosystem-derived use cases extracted from the AwesomeJavaFX project.
 | [uc-midi-device-integration.md](uc-midi-device-integration.md) | Java Sound MIDI devices, sequencing, receivers, and FX-thread-safe UI bridges |
 | [uc-midi-keyboard-controller.md](uc-midi-keyboard-controller.md) | Piano-keyboard controls, note mapping, and MIDI-driven key state in JavaFX |
 | [uc-midi-visualization.md](uc-midi-visualization.md) | Piano rolls, waterfalls, note timelines, and chart-based MIDI visualization |
+| [uc-terminal-emulators.md](uc-terminal-emulators.md) | Embedded terminals, console panes, ANSI handling, and shell-style process UIs |
+| [uc-workflow-graph-editors.md](uc-workflow-graph-editors.md) | Node graphs, visual programming, and workflow editor canvases |
+| [uc-3d-modeling-printing.md](uc-3d-modeling-printing.md) | 3D modeling previews, CAD-style tooling, and export/printing workflows |
+| [uc-terminal-emulators.md](uc-terminal-emulators.md) | Embedded terminals, console panes, ANSI handling, and shell-style process UIs |
+| [uc-workflow-graph-editors.md](uc-workflow-graph-editors.md) | Node graphs, visual programming, and workflow editor canvases |
+| [uc-3d-modeling-printing.md](uc-3d-modeling-printing.md) | 3D modeling previews, CAD-style tooling, and export/printing workflows |
 
 ## Initial implementation priority
 

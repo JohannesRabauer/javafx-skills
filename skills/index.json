@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "repository": {
     "name": "javafx-skills",
     "description": "Reusable AI coding skills for JavaFX.",
@@ -7,7 +7,7 @@
       "java": "17+",
       "javafx": "21+"
     },
-    "updated": "2026-06-06T11:37:24+02:00"
+    "updated": "2026-06-06T21:20:00+02:00"
   },
   "skills": [
     {
@@ -323,6 +323,54 @@
       }
     },
     {
+      "name": "javafx-ecosystem-controls-productivity",
+      "path": "skills/javafx-ecosystem-controls-productivity/SKILL.md",
+      "description": "Choose and integrate mature third-party JavaFX control libraries for forms, productivity widgets, theming, and developer workflow support.",
+      "category": "ui-core",
+      "tags": ["controls", "productivity", "forms", "themes", "third-party"],
+      "triggers": ["controlsfx javafx", "formsfx javafx", "validatorfx javafx", "javafx third-party controls"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-terminal-emulators",
+      "path": "skills/javafx-terminal-emulators/SKILL.md",
+      "description": "Build JavaFX terminal emulators or shell-style console panes with background process I/O, ANSI handling, and safe FX-thread updates.",
+      "category": "ui-advanced",
+      "tags": ["terminal", "console", "ansi", "process", "shell"],
+      "triggers": ["terminal emulator javafx", "javafx console pane", "jeditermfx", "process output javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-workflow-graph-editors",
+      "path": "skills/javafx-workflow-graph-editors/SKILL.md",
+      "description": "Build JavaFX node-based workflow editors, graph canvases, and visual programming surfaces with clean model separation.",
+      "category": "ui-advanced",
+      "tags": ["graph", "workflow", "nodes", "editor", "diagram"],
+      "triggers": ["graph editor javafx", "workflow editor javafx", "visual programming javafx", "node graph javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-3d-modeling-printing",
+      "path": "skills/javafx-3d-modeling-printing/SKILL.md",
+      "description": "Build JavaFX 3D modeling tools and print/export workflows with isolated geometry generation and preview rendering.",
+      "category": "ui-advanced",
+      "tags": ["3d", "cad", "geometry", "printing", "modeling"],
+      "triggers": ["javafx 3d modeling", "csg javafx", "javafx cad", "3d printing javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
       "name": "javafx-real-world-application-patterns",
       "path": "skills/javafx-real-world-application-patterns/SKILL.md",
       "description": "Compose multiple JavaFX skills into realistic editor, dashboard, media, and developer-tool application blueprints.",
@@ -352,7 +400,8 @@
         "javafx-fxml-controls-css",
         "javafx-concurrency-services",
         "javafx-theming-icons-styling",
-        "javafx-localization-runtime-language"
+        "javafx-localization-runtime-language",
+        "javafx-ecosystem-controls-productivity"
       ]
     },
     {
@@ -374,7 +423,10 @@
         "javafx-gestures-touch-input",
         "javafx-file-workflows-search",
         "javafx-midi-keyboard-controller",
-        "javafx-midi-visualization"
+        "javafx-midi-visualization",
+        "javafx-terminal-emulators",
+        "javafx-workflow-graph-editors",
+        "javafx-3d-modeling-printing"
       ]
     },
     {

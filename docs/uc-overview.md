@@ -24,6 +24,7 @@ mindmap
       Validation
       Dialogs
       Menus and toolbars
+      Third-party control libraries
     Properties and Bindings
       ObservableValue
       Property types
@@ -94,6 +95,11 @@ mindmap
       System tray
       Preferences
       Taskbar integration
+    Terminal and Workflow Tools
+      Embedded terminals
+      Console panes
+      Node graph editors
+      Visual programming
     Animation and Rendering
       Timeline
       Transition
@@ -101,6 +107,11 @@ mindmap
       Canvas
       Effects
       Game loops
+    Modeling and Fabrication
+      3D preview
+      CSG
+      CAD-style tooling
+      Export and printing
     Data and Persistence
       Preferences
       File IO
@@ -140,6 +151,9 @@ mindmap
       Dashboards and analytics
       Media apps
       Knowledge and productivity apps
+      Terminal tools
+      Workflow editors
+      3D modeling tools
     3D
       SubScene
       PerspectiveCamera

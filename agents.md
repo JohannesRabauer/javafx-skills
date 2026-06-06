@@ -56,6 +56,22 @@ Follow the established pattern already used in this repo:
 - Keep domain analysis docs in `docs/uc-*.md`
 - Use lowercase kebab-case for new directories and files unless JavaFX naming requires otherwise
 
+## Catalog synchronization
+
+- When a skill is added, removed, or renamed, update `skills/index.json`, the relevant `docs/uc-*.md`
+  files, and the `web/` site in the same change.
+- If the catalog gains a new category or grouping, update the website's category labels and any
+  related repo guidance so the UI, manifest, and docs stay aligned.
+- Treat the website as a live view of the catalog, not as a separate copy of the skill list.
+
+## Catalog synchronization
+
+- When a skill is added, removed, or renamed, update `skills/index.json`, the relevant `docs/uc-*.md`
+  files, and the `web/` site in the same change.
+- If the catalog gains a new category or grouping, update the website's category labels and any
+  related repo guidance so the UI, manifest, and docs stay aligned.
+- Treat the website as a live view of the catalog, not as a separate copy of the skill list.
+
 ## How to research before editing
 
 Before writing a new skill or revising an existing one:

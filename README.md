@@ -53,8 +53,8 @@ This keeps the repository readable as plain Markdown while still being easy to i
 
 ## Distribution and deployment
 
-The repository now ships the same install and deployment surfaces as the source `fxgl-skills`
-repository, adapted for the JavaFX catalog:
+The repository now ships the same install and deployment surfaces as the reference repository,
+adapted for the JavaFX catalog:
 
 - npm package metadata and typed Node entry points via `package.json`, `index.js`, and `index.d.ts`
 - MCP access via `mcp/server.js` (stdio) and `mcp/server-http.js` (HTTP)
@@ -65,6 +65,18 @@ repository, adapted for the JavaFX catalog:
   - releasing `javafx-skills.zip`
   - building and deploying the Astro website to GitHub Pages
 - A static browser UI in `web/` for browsing and searching the catalog
+
+## Use the catalog
+
+| Surface | What it is for |
+|---|---|
+| [Website](https://johannesrabauer.github.io/javafx-skills/) | Browse the catalog in the browser, filter skills by category, search triggers and tags, and open per-skill pages for quick discovery. |
+| [MCP server](https://javafx-skills.onrender.com) | Connect compatible MCP clients and AI tools to the live catalog so they can list skills, search by topic, and load full `SKILL.md` guidance programmatically. |
+| [Smithery](https://smithery.ai/servers/rabauer-dev/javafx-skills) | Install and configure the hosted MCP server through Smithery for supported clients instead of wiring the endpoint manually. |
+| [npm package](https://www.npmjs.com/package/javafx-skills) | Consume the manifest and skill files from Node.js tooling or local automation using the published package instead of cloning the repository. |
+
+The website reads the skill manifest directly, so any catalog change should be kept in sync with
+`skills/index.json`, the docs index, and the web UI together.
 
 ## Compatibility notes
 
