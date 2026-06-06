@@ -22,7 +22,7 @@ async function readBody(req) {
 
 const httpServer = http.createServer(async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Accept, Mcp-Session-Id');
 
   if (req.method === 'OPTIONS') {
@@ -32,10 +32,27 @@ const httpServer = http.createServer(async (req, res) => {
   }
 
   const { pathname } = new URL(req.url, 'http://localhost');
+  const isMcpEndpoint = pathname === '/' || pathname === '/mcp';
 
-  if (pathname === '/mcp' && req.method === 'POST') {
+  if (isMcpEndpoint && req.method === 'GET' && pathname === '/') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(
+      JSON.stringify({
+        name: 'javafx-skills',
+        version: '1.0.0',
+        skills: skills.length,
+        endpoints: {
+          mcp: '/mcp',
+          root: '/'
+        }
+      })
+    );
+    return;
+  }
+
+  if (isMcpEndpoint && (req.method === 'POST' || req.method === 'GET' || req.method === 'DELETE')) {
     try {
-      const body = await readBody(req);
+      const body = req.method === 'POST' ? await readBody(req) : undefined;
       const transport = new StreamableHTTPServerTransport({ sessionIdGenerator: undefined });
       const server = createMcpServer();
       await server.connect(transport);
@@ -49,14 +66,8 @@ const httpServer = http.createServer(async (req, res) => {
     return;
   }
 
-  if (pathname === '/') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end(`JavaFX Skills MCP Server\n${skills.length} skills available\nEndpoint: POST /mcp\n`);
-    return;
-  }
-
-  res.writeHead(404);
-  res.end();
+  res.writeHead(404, { 'Content-Type': 'application/json' });
+  res.end(JSON.stringify({ error: 'Not found' }));
 });
 
 const port = process.env.PORT || 3000;

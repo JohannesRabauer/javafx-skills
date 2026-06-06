@@ -1,5 +1,5 @@
 # MCP server endpoint deployed on Render.com
-# URL: https://javafx-skills-mcp.onrender.com/mcp
+# Root serves discovery metadata on GET and the MCP transport on POST.
 startCommand:
   type: http
-  url: https://javafx-skills-mcp.onrender.com/mcp
+  url: https://javafx-skills-mcp.onrender.com/
