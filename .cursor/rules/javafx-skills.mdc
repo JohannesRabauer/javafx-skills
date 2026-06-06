@@ -1,0 +1,18 @@
+---
+description: Use the JavaFX skill catalog and manifest before generating JavaFX code
+globs: []
+alwaysApply: true
+---
+
+# JavaFX Skills Rule
+
+For JavaFX-related tasks:
+
+1. Check `skills/index.json` to find matching skills.
+2. Read the relevant `skills/*/SKILL.md` files.
+3. Treat those skill files as canonical for this repository.
+4. Verify concrete JavaFX APIs against the official OpenJFX Javadoc and samples.
+
+Prefer Java 17+ and JavaFX 21+ patterns.
+
+Do not invent JavaFX APIs or blur JavaFX guidance with other frameworks.

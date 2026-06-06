@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "repository": {
+    "name": "javafx-skills",
+    "description": "Reusable AI coding skills for JavaFX.",
+    "baseline": {
+      "java": "17+",
+      "javafx": "21+"
+    }
+  },
+  "skills": [
+    {
+      "name": "javafx-project-starter",
+      "path": "skills/javafx-project-starter/SKILL.md",
+      "description": "Initialize a JavaFX application with a sensible starter structure, stage setup, and view wiring.",
+      "category": "workflow",
+      "tags": ["starter", "scaffolding", "application", "stage", "scene"],
+      "triggers": ["create javafx project", "initialize javafx app", "new javafx application", "javafx starter"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-properties-bindings",
+      "path": "skills/javafx-properties-bindings/SKILL.md",
+      "description": "Model reactive JavaFX state with properties, bindings, and listeners.",
+      "category": "core-ui",
+      "tags": ["properties", "bindings", "listeners", "events", "state"],
+      "triggers": ["javafx binding", "observable property", "reactive javafx ui", "javafx listener"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-fxml-controls-css",
+      "path": "skills/javafx-fxml-controls-css/SKILL.md",
+      "description": "Build JavaFX views with FXML, controllers, common controls, and CSS styling.",
+      "category": "ui",
+      "tags": ["fxml", "controller", "controls", "css", "styling"],
+      "triggers": ["javafx fxml", "javafx controller", "javafx css", "style javafx controls"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-concurrency-services",
+      "path": "skills/javafx-concurrency-services/SKILL.md",
+      "description": "Run background work safely in JavaFX with Task, Service, and FX-thread handoff.",
+      "category": "platform",
+      "tags": ["task", "service", "background", "threading", "concurrency"],
+      "triggers": ["javafx task", "javafx service", "background work javafx", "platform runlater"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    }
+  ],
+  "skillGroups": [
+    {
+      "name": "starter",
+      "skills": [
+        "javafx-project-starter"
+      ]
+    },
+    {
+      "name": "ui-foundations",
+      "skills": [
+        "javafx-properties-bindings",
+        "javafx-fxml-controls-css",
+        "javafx-concurrency-services"
+      ]
+    }
+  ]
+}
