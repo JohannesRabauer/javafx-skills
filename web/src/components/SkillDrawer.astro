@@ -1,0 +1,99 @@
+---
+const BASE = import.meta.env.BASE_URL;
+---
+
+<div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+<aside id="skill-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="Skill detail">
+  <div class="drawer-top">
+    <span id="drawer-badge" class="badge badge--ui-core">UI Core</span>
+    <button class="drawer-close" id="drawer-close" aria-label="Close">✕ Close</button>
+  </div>
+
+  <h2 id="drawer-title" class="drawer-title"></h2>
+  <span id="drawer-compat" class="drawer-compat"></span>
+
+  <p class="drawer-section-label">Description</p>
+  <p id="drawer-desc" class="drawer-desc"></p>
+
+  <p class="drawer-section-label">Triggers</p>
+  <div id="drawer-triggers" class="drawer-chips"></div>
+
+  <p class="drawer-section-label">Tags</p>
+  <div id="drawer-tags" class="drawer-chips"></div>
+
+  <div class="drawer-actions">
+    <a id="drawer-detail-link" href="#" class="drawer-link">View full skill page</a>
+    <a
+      id="drawer-github-link"
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="drawer-link drawer-link--secondary"
+    >
+      View SKILL.md on GitHub
+    </a>
+  </div>
+</aside>
+
+<script>
+  const drawer = document.getElementById('skill-drawer');
+  const backdrop = document.getElementById('drawer-backdrop');
+  const closeBtn = document.getElementById('drawer-close');
+  const badgeEl = document.getElementById('drawer-badge');
+  const titleEl = document.getElementById('drawer-title');
+  const compatEl = document.getElementById('drawer-compat');
+  const descEl = document.getElementById('drawer-desc');
+  const triggersEl = document.getElementById('drawer-triggers');
+  const tagsEl = document.getElementById('drawer-tags');
+  const detailLink = document.getElementById('drawer-detail-link');
+  const githubLink = document.getElementById('drawer-github-link');
+
+  function chips(items) {
+    return items.map((item) => `<span class="tag">${item.replace(/</g, '&lt;')}</span>`).join('');
+  }
+
+  function openDrawer(card) {
+    const data = card.dataset;
+    badgeEl.className = `badge badge--${data.category}`;
+    badgeEl.textContent = data.categoryLabel ?? data.category ?? '';
+    titleEl.textContent = data.title ?? '';
+    compatEl.textContent = data.compatibility ?? '';
+    descEl.textContent = data.description ?? '';
+    triggersEl.innerHTML = chips((data.triggers ?? '').split(', ').filter(Boolean));
+    tagsEl.innerHTML = chips((data.tags ?? '').split(',').filter(Boolean));
+    detailLink.href = `${BASE}skills/${data.name}/`;
+    githubLink.href = `https://github.com/JohannesRabauer/javafx-skills/blob/main/${data.path}`;
+    drawer.classList.add('open');
+    backdrop.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    backdrop.classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.card-link').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      const card = link.closest('.skill-card');
+      if (card) openDrawer(card);
+    });
+    link.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const card = link.closest('.skill-card');
+        if (card) openDrawer(card);
+      }
+    });
+  });
+
+  closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeDrawer();
+  });
+</script>

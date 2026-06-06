@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: javafx-skills-mcp
+    runtime: node
+    buildCommand: npm install
+    startCommand: node mcp/server-http.js
+    envVars:
+      - key: NODE_ENV
+        value: production

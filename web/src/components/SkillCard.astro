@@ -1,0 +1,38 @@
+---
+import type { AnnotatedSkill } from '../types/skills';
+
+interface Props {
+  skill: AnnotatedSkill;
+}
+
+const { skill } = Astro.props;
+const specificTags = skill.tags.slice(0, 4);
+---
+
+<article
+  class="skill-card"
+  style={`--index: ${skill.cardIndex}`}
+  data-category={skill.category}
+  data-name={skill.name}
+  data-title={skill.name}
+  data-tags={skill.tags.join(',')}
+  data-description={skill.description}
+  data-triggers={skill.triggers.join(', ')}
+  data-compatibility={skill.compatibilityLabel}
+  data-path={skill.path}
+  data-category-label={skill.categoryLabel}
+>
+  <div class={`card-link badge-${skill.category}`} role="button" tabindex="0" aria-label={`Open ${skill.name}`}>
+    <div class="card-header">
+      <span class={`badge badge--${skill.category}`}>{skill.categoryLabel}</span>
+      <span class="card-version">{skill.compatibilityLabel}</span>
+    </div>
+
+    <h3 class="card-title">{skill.name}</h3>
+    <p class="card-desc">{skill.description}</p>
+
+    <div class="card-tags">
+      {specificTags.map((tag) => <span class="tag">{tag}</span>)}
+    </div>
+  </div>
+</article>

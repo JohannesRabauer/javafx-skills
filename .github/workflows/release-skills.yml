@@ -1,0 +1,38 @@
+name: Release Skills ZIP
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - '.github/workflows/release-skills.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and release skills ZIP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build ZIP
+        run: zip -r javafx-skills.zip skills/
+
+      - name: Delete previous release
+        run: gh release delete skills-latest --yes --cleanup-tag 2>/dev/null || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create release
+        run: |
+          gh release create skills-latest \
+            --title "Skills Package" \
+            --notes "Auto-generated skills package. Updated on every push to main." \
+            --latest \
+            javafx-skills.zip
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

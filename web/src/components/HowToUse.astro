@@ -1,0 +1,41 @@
+<section class="how-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Integration</p>
+      <h2 class="section-title">Works With Your AI Tool</h2>
+      <p class="section-subtitle">Clone once and use the same catalog with Claude Code, GitHub Copilot, and Cursor.</p>
+    </div>
+
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-card-icon">🤖</div>
+        <h3 class="how-card-title">Claude Code</h3>
+        <p class="how-card-desc">
+          Reference this repository and instruct agents to read <code>skills/index.json</code> first,
+          then load the relevant <code>SKILL.md</code> files.
+        </p>
+        <pre class="how-code">Read skills/index.json first, then open matching skills/&lt;name&gt;/SKILL.md files.</pre>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-icon">⚡</div>
+        <h3 class="how-card-title">GitHub Copilot</h3>
+        <p class="how-card-desc">
+          The repository ships <code>.github/copilot-instructions.md</code>, so Copilot can use the
+          JavaFX skill catalog in any workspace that includes this repo.
+        </p>
+        <pre class="how-code">.github/copilot-instructions.md points Copilot back to skills/index.json and skills/*/SKILL.md.</pre>
+      </div>
+
+      <div class="how-card">
+        <div class="how-card-icon">✦</div>
+        <h3 class="how-card-title">Cursor</h3>
+        <p class="how-card-desc">
+          Cursor picks up <code>.cursor/rules/javafx-skills.mdc</code> and can route JavaFX prompts
+          through the catalog automatically.
+        </p>
+        <pre class="how-code">.cursor/rules/javafx-skills.mdc activates skill selection for JavaFX-related prompts.</pre>
+      </div>
+    </div>
+  </div>
+</section>

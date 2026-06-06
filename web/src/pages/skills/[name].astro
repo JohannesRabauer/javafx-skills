@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import { skills } from '../../data/skills';
+import type { AnnotatedSkill } from '../../types/skills';
+
+export function getStaticPaths() {
+  return skills.map((skill) => ({
+    params: { name: skill.name },
+    props: { skill }
+  }));
+}
+
+interface Props {
+  skill: AnnotatedSkill;
+}
+
+const { skill } = Astro.props;
+const BASE = import.meta.env.BASE_URL;
+const githubUrl = `https://github.com/JohannesRabauer/javafx-skills/blob/main/${skill.path}`;
+---
+
+<Layout title={skill.name} description={skill.description}>
+  <div class="detail-page">
+    <nav class="detail-nav" aria-label="Breadcrumb">
+      <div class="container detail-nav-inner">
+        <a href={`${BASE}`} class="detail-nav-link">JavaFX Skills</a>
+        <span aria-hidden="true">›</span>
+        <span class={`badge badge--${skill.category}`}>{skill.categoryLabel}</span>
+        <span aria-hidden="true">›</span>
+        <span>{skill.name}</span>
+      </div>
+    </nav>
+
+    <div class="container detail-body">
+      <header class="detail-header">
+        <span class={`badge badge--${skill.category}`}>{skill.categoryLabel}</span>
+        <h1 class="detail-title">{skill.name}</h1>
+        <div class="detail-meta">
+          <span class="detail-compat">{skill.compatibilityLabel}</span>
+        </div>
+      </header>
+
+      <p class="detail-label">About this skill</p>
+      <p class="detail-description">{skill.description}</p>
+
+      <p class="detail-label">Triggers</p>
+      <div class="chip-list">
+        {skill.triggers.map((trigger) => <span class="chip">{trigger}</span>)}
+      </div>
+
+      <p class="detail-label">Tags</p>
+      <div class="chip-list">
+        {skill.tags.map((tag) => <span class="chip">{tag}</span>)}
+      </div>
+
+      <div class="detail-actions">
+        <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="detail-link">View SKILL.md on GitHub</a>
+        <a href={`${BASE}`} class="detail-link detail-link--secondary">← Back to all skills</a>
+      </div>
+    </div>
+  </div>
+  <Footer />
+</Layout>

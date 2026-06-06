@@ -1,0 +1,45 @@
+{
+  "name": "javafx-skills",
+  "version": "1.0.0",
+  "description": "Canonical JavaFX coding skills for AI-assisted application development",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
+  "bin": {
+    "javafx-skills-mcp": "mcp/server.js",
+    "javafx-skills-mcp-http": "mcp/server-http.js"
+  },
+  "files": [
+    "skills/",
+    "index.js",
+    "index.d.ts",
+    "mcp/"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "keywords": [
+    "javafx",
+    "java",
+    "desktop-ui",
+    "ai",
+    "skills",
+    "claude-code",
+    "copilot",
+    "cursor"
+  ],
+  "author": "Johannes Rabauer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JohannesRabauer/javafx-skills.git"
+  },
+  "homepage": "https://johannesrabauer.github.io/javafx-skills/",
+  "engines": {
+    "node": ">=18"
+  }
+}

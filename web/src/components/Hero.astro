@@ -1,0 +1,49 @@
+---
+interface Props {
+  count: number;
+}
+
+const { count } = Astro.props;
+---
+
+<section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">AI-Assisted JavaFX Development</div>
+
+    <h1 class="hero-title">
+      {count} Skills for<br />
+      <span class="accent">JavaFX with AI</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Canonical, tool-agnostic coding skills for JavaFX applications, desktop tools, rich clients,
+      integrations, and deployment workflows.
+    </p>
+
+    <div class="hero-stats">
+      <span class="hero-stat"><span class="hero-stat-dot"></span>{count} skills</span>
+      <span class="hero-stat"><span class="hero-stat-dot"></span>JavaFX 21+</span>
+      <span class="hero-stat"><span class="hero-stat-dot"></span>Java 17+</span>
+      <span class="hero-stat"><span class="hero-stat-dot"></span>Open Source</span>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#skills" class="btn-primary">Browse Skills</a>
+      <a
+        href="https://github.com/JohannesRabauer/javafx-skills/releases/latest/download/javafx-skills.zip"
+        class="btn-secondary"
+      >
+        Download Skills
+      </a>
+      <a
+        href="https://github.com/JohannesRabauer/javafx-skills"
+        class="btn-secondary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View on GitHub
+      </a>
+    </div>
+  </div>
+</section>

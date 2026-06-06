@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import SkillsGrid from '../components/SkillsGrid.astro';
+import SkillDrawer from '../components/SkillDrawer.astro';
+import HowToUse from '../components/HowToUse.astro';
+import Footer from '../components/Footer.astro';
+import { skills, totalCount } from '../data/skills';
+---
+
+<Layout title="JavaFX Skills">
+  <Hero count={totalCount} />
+  <SkillsGrid skills={skills} />
+  <SkillDrawer />
+  <HowToUse />
+  <Footer />
+</Layout>

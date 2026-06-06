@@ -1,0 +1,102 @@
+---
+import type { AnnotatedSkill } from '../types/skills';
+import SkillCard from './SkillCard.astro';
+import { categories } from '../data/skills';
+
+interface Props {
+  skills: AnnotatedSkill[];
+}
+
+const { skills } = Astro.props;
+---
+
+<section class="skills-section" id="skills">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Skill Library</p>
+      <h2 class="section-title">Browse All Skills</h2>
+      <p class="section-subtitle">Filter by category or search to find the JavaFX skill you need.</p>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-tabs" role="tablist" aria-label="Filter skills by category">
+        {categories.map((category, i) => (
+          <button
+            class={`filter-btn${i === 0 ? ' active' : ''}`}
+            data-filter={category.key}
+            role="tab"
+            aria-selected={i === 0 ? 'true' : 'false'}
+          >
+            {category.label}
+            <span class="filter-count">{category.count}</span>
+          </button>
+        ))}
+      </div>
+
+      <div class="filter-right">
+        <span class="result-count" id="result-count">{skills.length} skills</span>
+        <div class="search-wrap">
+          <input
+            id="skill-search"
+            class="search-input"
+            type="search"
+            placeholder="Search skills…"
+            aria-label="Search skills"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-grid" id="skills-grid">
+      {skills.map((skill) => <SkillCard skill={skill} />)}
+      <p class="no-results" id="no-results" aria-live="polite">No skills match your search.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const cards = Array.from(document.querySelectorAll('.skill-card'));
+  const filterBtns = Array.from(document.querySelectorAll('[data-filter]'));
+  const searchInput = document.getElementById('skill-search');
+  const noResults = document.getElementById('no-results');
+  const countEl = document.getElementById('result-count');
+  let activeFilter = 'all';
+
+  function applyFilters() {
+    const term = searchInput.value.toLowerCase().trim();
+    let visible = 0;
+
+    cards.forEach((card) => {
+      const matchesFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
+      const matchesSearch =
+        !term ||
+        (card.dataset.name ?? '').includes(term) ||
+        (card.dataset.tags ?? '').includes(term) ||
+        (card.dataset.description ?? '').toLowerCase().includes(term) ||
+        (card.dataset.triggers ?? '').toLowerCase().includes(term);
+
+      const show = matchesFilter && matchesSearch;
+      card.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+
+    noResults.classList.toggle('visible', visible === 0);
+    countEl.textContent = `${visible} skill${visible !== 1 ? 's' : ''}`;
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      activeFilter = btn.dataset.filter ?? 'all';
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
+</script>

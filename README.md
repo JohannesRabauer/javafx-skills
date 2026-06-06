@@ -25,6 +25,9 @@ Cursor, and generic agent runtimes without locking the content into any single t
 | `.github/copilot-instructions.md` | GitHub Copilot-specific adapter |
 | `CLAUDE.md` | Claude Code-specific adapter |
 | `.cursor/rules/javafx-skills.mdc` | Cursor-specific adapter |
+| `mcp/` | MCP servers for stdio and HTTP access |
+| `web/` | Astro-powered GitHub Pages website |
+| `.github/workflows/` | npm publish, release ZIP, and Pages deploy workflows |
 
 ## Canonical skill format
 
@@ -48,16 +51,20 @@ This keeps the repository readable as plain Markdown while still being easy to i
 3. Use those skills as implementation guidance.
 4. When API details matter, verify them against the official OpenJFX Javadoc and OpenJFX samples.
 
-## Initial skill groups
+## Distribution and deployment
 
-The repository starts with a small JavaFX-focused seed set:
+The repository now ships the same install and deployment surfaces as the source `fxgl-skills`
+repository, adapted for the JavaFX catalog:
 
-- `javafx-project-starter`
-- `javafx-properties-bindings`
-- `javafx-fxml-controls-css`
-- `javafx-concurrency-services`
-
-Additional skills should extend this catalogue using the same structure and naming conventions.
+- npm package metadata and typed Node entry points via `package.json`, `index.js`, and `index.d.ts`
+- MCP access via `mcp/server.js` (stdio) and `mcp/server-http.js` (HTTP)
+- Render deployment config in `render.yaml`
+- Smithery endpoint metadata in `smithery.yaml`
+- GitHub Actions for:
+  - publishing the npm package
+  - releasing `javafx-skills.zip`
+  - building and deploying the Astro website to GitHub Pages
+- A static browser UI in `web/` for browsing and searching the catalog
 
 ## Compatibility notes
 
