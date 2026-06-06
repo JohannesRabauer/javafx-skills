@@ -1,15 +1,15 @@
 ---
 name: javafx-concurrency-services
-description: Use JavaFX Task and Service correctly for background work and responsive UIs.
+description: Use javafx.concurrent Task and Service correctly for background work and responsive UIs.
 triggers:
   - javafx task
   - javafx service
-  - background work javafx
+  - javafx.concurrent
   - platform runlater
 compatibility:
   java: 17+
   javafx: 21+
-category: platform
+category: ui-core
 tags:
   - task
   - service
@@ -80,6 +80,8 @@ public class LoaderView extends VBox {
 - Prefer `Task` for one-shot work and `Service` for restartable workflows.
 - Bind message and progress properties so the UI reflects worker state without manual polling.
 - Keep executor ownership explicit when the application manages many background operations.
+- Use `javafx-architecture-frameworks` for overall application service design and
+  `javafx-reactive-binding-state` for stream-based state pipelines.
 
 ## Gotchas
 

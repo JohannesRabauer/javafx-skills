@@ -1,21 +1,94 @@
 {
-  "version": 1,
+  "version": 4,
   "repository": {
     "name": "javafx-skills",
     "description": "Reusable AI coding skills for JavaFX.",
     "baseline": {
       "java": "17+",
       "javafx": "21+"
-    }
+    },
+    "updated": "2026-06-06T11:37:24+02:00"
   },
   "skills": [
     {
       "name": "javafx-project-starter",
       "path": "skills/javafx-project-starter/SKILL.md",
-      "description": "Initialize a JavaFX application with a sensible starter structure, stage setup, and view wiring.",
-      "category": "workflow",
+      "description": "Scaffold a JavaFX application with baseline structure, module-aware startup wiring, and a first scene.",
+      "category": "project-setup",
       "tags": ["starter", "scaffolding", "application", "stage", "scene"],
-      "triggers": ["create javafx project", "initialize javafx app", "new javafx application", "javafx starter"],
+      "triggers": ["create javafx project", "initialize javafx application", "new javafx starter", "scaffold javafx app"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-midi-device-integration",
+      "path": "skills/javafx-midi-device-integration/SKILL.md",
+      "description": "Connect JavaFX to javax.sound.midi devices, sequencers, and receivers with safe FX-thread bridging.",
+      "category": "platform-integration",
+      "tags": ["midi", "java-sound", "receiver", "sequencer", "hardware"],
+      "triggers": ["javafx midi", "javax.sound.midi javafx", "javafx sequencer midi", "midi receiver javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-application-lifecycle",
+      "path": "skills/javafx-application-lifecycle/SKILL.md",
+      "description": "Manage the JavaFX Application lifecycle, startup sequencing, primary stage setup, and shutdown behavior.",
+      "category": "project-setup",
+      "tags": ["application", "lifecycle", "stage", "startup", "shutdown"],
+      "triggers": ["javafx application lifecycle", "application start stage", "application stop javafx", "primary stage initialization"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-midi-keyboard-controller",
+      "path": "skills/javafx-midi-keyboard-controller/SKILL.md",
+      "description": "Build JavaFX piano-keyboard controls that map MIDI notes to white and black keys and show note state clearly.",
+      "category": "ui-advanced",
+      "tags": ["midi", "piano", "keyboard", "note-mapping", "controls"],
+      "triggers": ["javafx piano keyboard", "midi keyboard javafx", "virtual piano javafx", "midi note mapping javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-midi-visualization",
+      "path": "skills/javafx-midi-visualization/SKILL.md",
+      "description": "Visualize MIDI notes in JavaFX with piano rolls, waterfalls, note timelines, and chart-based views.",
+      "category": "ui-advanced",
+      "tags": ["midi", "visualization", "piano-roll", "timeline", "charts"],
+      "triggers": ["javafx midi visualization", "midi piano roll javafx", "midi waterfall javafx", "midi note timeline javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-testing-packaging-distribution",
+      "path": "skills/javafx-testing-packaging-distribution/SKILL.md",
+      "description": "Test JavaFX UIs and ship them with jlink, jpackage, auto-updaters, and target-aware distribution choices.",
+      "category": "project-setup",
+      "tags": ["testing", "packaging", "jpackage", "updates", "distribution"],
+      "triggers": ["testfx javafx", "jpackage javafx", "update4j", "javafx distribution"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-ui-layout-navigation",
+      "path": "skills/javafx-ui-layout-navigation/SKILL.md",
+      "description": "Structure JavaFX scenes with layout panes, root swapping, dialogs, and reusable navigation patterns.",
+      "category": "ui-core",
+      "tags": ["layout", "navigation", "borderpane", "scene-graph", "dialogs"],
+      "triggers": ["javafx layout panes", "borderpane navigation", "swap scene root javafx", "javafx navigation"],
       "compatibility": {
         "java": "17+",
         "javafx": "21+"
@@ -24,10 +97,10 @@
     {
       "name": "javafx-properties-bindings",
       "path": "skills/javafx-properties-bindings/SKILL.md",
-      "description": "Model reactive JavaFX state with properties, bindings, and listeners.",
-      "category": "core-ui",
-      "tags": ["properties", "bindings", "listeners", "events", "state"],
-      "triggers": ["javafx binding", "observable property", "reactive javafx ui", "javafx listener"],
+      "description": "Build JavaFX UIs with core observable properties, bindings, and listeners.",
+      "category": "ui-core",
+      "tags": ["properties", "bindings", "listeners", "state", "events"],
+      "triggers": ["javafx property binding", "simpleintegerproperty", "javafx changelistener", "bind bidirectional"],
       "compatibility": {
         "java": "17+",
         "javafx": "21+"
@@ -36,10 +109,10 @@
     {
       "name": "javafx-fxml-controls-css",
       "path": "skills/javafx-fxml-controls-css/SKILL.md",
-      "description": "Build JavaFX views with FXML, controllers, common controls, and CSS styling.",
-      "category": "ui",
+      "description": "Compose JavaFX views with FXML, controller injection, and control wiring.",
+      "category": "ui-core",
       "tags": ["fxml", "controller", "controls", "css", "styling"],
-      "triggers": ["javafx fxml", "javafx controller", "javafx css", "style javafx controls"],
+      "triggers": ["javafx fxml", "javafx controller", "fx:id", "fxml loader"],
       "compatibility": {
         "java": "17+",
         "javafx": "21+"
@@ -48,10 +121,214 @@
     {
       "name": "javafx-concurrency-services",
       "path": "skills/javafx-concurrency-services/SKILL.md",
-      "description": "Run background work safely in JavaFX with Task, Service, and FX-thread handoff.",
-      "category": "platform",
-      "tags": ["task", "service", "background", "threading", "concurrency"],
-      "triggers": ["javafx task", "javafx service", "background work javafx", "platform runlater"],
+      "description": "Use javafx.concurrent Task and Service correctly for background work and responsive UIs.",
+      "category": "ui-core",
+      "tags": ["task", "service", "threading", "background", "responsiveness"],
+      "triggers": ["javafx task", "javafx service", "javafx.concurrent", "platform runlater"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-theming-icons-styling",
+      "path": "skills/javafx-theming-icons-styling/SKILL.md",
+      "description": "Apply JavaFX themes, icon packs, stylesheet architecture, and live styling workflows consistently.",
+      "category": "ui-core",
+      "tags": ["theming", "css", "icons", "branding", "styling"],
+      "triggers": ["javafx theme", "ikonli javafx", "javafx css architecture", "live css reload javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-localization-runtime-language",
+      "path": "skills/javafx-localization-runtime-language/SKILL.md",
+      "description": "Localize JavaFX applications with resource bundles, locale-aware formatting, and runtime language switching.",
+      "category": "ui-core",
+      "tags": ["localization", "i18n", "resourcebundle", "locale", "translation"],
+      "triggers": ["javafx localization", "runtime language switch javafx", "resourcebundle javafx", "javafx i18n"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-architecture-frameworks",
+      "path": "skills/javafx-architecture-frameworks/SKILL.md",
+      "description": "Choose JavaFX architecture patterns such as plain scene-graph, MVP, MVVM, MVCI, DI, and routed shells.",
+      "category": "architecture",
+      "tags": ["architecture", "mvvm", "mvp", "dependency-injection", "navigation"],
+      "triggers": ["javafx architecture", "mvvm javafx", "javafx dependency injection", "afterburner fx architecture"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-reactive-binding-state",
+      "path": "skills/javafx-reactive-binding-state/SKILL.md",
+      "description": "Extend JavaFX with advanced bindings, event streams, reducers, and synchronized reactive state.",
+      "category": "architecture",
+      "tags": ["reactive", "bindings", "reducers", "streams", "state"],
+      "triggers": ["reactfx javafx", "reduxfx", "reactive javafx state", "rxjavafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-animation-canvas-render-loop",
+      "path": "skills/javafx-animation-canvas-render-loop/SKILL.md",
+      "description": "Animate JavaFX UIs with Timeline, Transition, Canvas, and AnimationTimer-based render loops.",
+      "category": "ui-advanced",
+      "tags": ["animation", "canvas", "animationtimer", "timeline", "rendering"],
+      "triggers": ["animationtimer javafx", "timeline javafx", "canvas javafx", "render loop javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-media-webview-3d",
+      "path": "skills/javafx-media-webview-3d/SKILL.md",
+      "description": "Use JavaFX Media, WebView/WebEngine core setup, and 3D scene-graph primitives safely.",
+      "category": "ui-advanced",
+      "tags": ["media", "webview", "webengine", "subscene", "3d"],
+      "triggers": ["javafx mediaplayer", "media view javafx", "webengine javafx", "javafx 3d"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-forms-validation-preferences",
+      "path": "skills/javafx-forms-validation-preferences/SKILL.md",
+      "description": "Build JavaFX forms, validation flows, suggestion inputs, and preferences screens with clear state ownership.",
+      "category": "ui-advanced",
+      "tags": ["forms", "validation", "preferences", "settings", "controls"],
+      "triggers": ["javafx form validation", "preferencesfx", "javafx settings screen", "javafx autocomplete field"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-data-visualization-dashboards",
+      "path": "skills/javafx-data-visualization-dashboards/SKILL.md",
+      "description": "Build JavaFX charts, dashboards, gauges, and high-volume visualizations with the right level of tooling.",
+      "category": "ui-advanced",
+      "tags": ["charts", "dashboards", "gauges", "visualization", "analytics"],
+      "triggers": ["javafx chart", "javafx dashboard", "tilesfx", "chartfx javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-rich-text-documents-editors",
+      "path": "skills/javafx-rich-text-documents-editors/SKILL.md",
+      "description": "Build JavaFX editor-style applications for rich text, documents, annotation, and file-centric workflows.",
+      "category": "ui-advanced",
+      "tags": ["editors", "rich-text", "documents", "annotation", "workspace"],
+      "triggers": ["richtextfx javafx", "javafx editor workspace", "document preview javafx", "javafx annotation tool"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-calendar-scheduling-planning",
+      "path": "skills/javafx-calendar-scheduling-planning/SKILL.md",
+      "description": "Build JavaFX calendar, date-centric scheduling, and Gantt-style planning interfaces with clear time-state ownership.",
+      "category": "ui-advanced",
+      "tags": ["calendar", "scheduling", "gantt", "planning", "timeline"],
+      "triggers": ["calendarfx", "javafx scheduling ui", "javafx gantt chart", "planning timeline javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-gestures-touch-input",
+      "path": "skills/javafx-gestures-touch-input/SKILL.md",
+      "description": "Handle JavaFX gestures, pinch-to-zoom, panning, and multi-touch interaction with explicit transform ownership.",
+      "category": "ui-advanced",
+      "tags": ["gestures", "touch", "zoom", "pan", "input"],
+      "triggers": ["javafx pinch zoom", "gesturefx", "javafx touch input", "tuiofx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-file-workflows-search",
+      "path": "skills/javafx-file-workflows-search/SKILL.md",
+      "description": "Build JavaFX file choosers, directory watches, import/export flows, and desktop search interfaces safely.",
+      "category": "ui-advanced",
+      "tags": ["files", "search", "import", "export", "directories"],
+      "triggers": ["javafx file chooser", "fxfilechooser", "livedirsfx", "javafx desktop search"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-desktop-shell-integration",
+      "path": "skills/javafx-desktop-shell-integration/SKILL.md",
+      "description": "Build JavaFX desktop shells with workbenches, detachable tabs, custom stages, tray integration, and persisted layouts.",
+      "category": "platform-integration",
+      "tags": ["desktop", "workbench", "docking", "tray", "stage"],
+      "triggers": ["javafx docking", "detachable tabs javafx", "custom undecorated stage javafx", "javafx tray icon"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-web-maps-embedded-integration",
+      "path": "skills/javafx-web-maps-embedded-integration/SKILL.md",
+      "description": "Integrate JavaFX with JavaScript bridges, embedded browsers, maps, and browser-delivered JavaFX strategies.",
+      "category": "platform-integration",
+      "tags": ["webview", "javascript", "maps", "browser", "integration"],
+      "triggers": ["webview javascript bridge javafx", "javafx map view", "jxbrowser javafx", "webfx jpro javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-mobile-embedded-targets",
+      "path": "skills/javafx-mobile-embedded-targets/SKILL.md",
+      "description": "Plan JavaFX applications for mobile, embedded, browser-delivered, and multi-target runtimes with explicit platform boundaries.",
+      "category": "platform-integration",
+      "tags": ["mobile", "embedded", "browser", "deployment", "platform"],
+      "triggers": ["javafx mobile", "javafx embedded", "javafxports", "raspberry pi javafx"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-devtools-inspection-debugging",
+      "path": "skills/javafx-devtools-inspection-debugging/SKILL.md",
+      "description": "Improve JavaFX development with scene inspection, CSS debugging, state-devtools, and diagnostic overlays.",
+      "category": "tooling",
+      "tags": ["devtools", "inspection", "debugging", "css", "diagnostics"],
+      "triggers": ["scenic view javafx", "javafx css debugging", "scene graph inspector javafx", "javafx devtools"],
+      "compatibility": {
+        "java": "17+",
+        "javafx": "21+"
+      }
+    },
+    {
+      "name": "javafx-real-world-application-patterns",
+      "path": "skills/javafx-real-world-application-patterns/SKILL.md",
+      "description": "Compose multiple JavaFX skills into realistic editor, dashboard, media, and developer-tool application blueprints.",
+      "category": "app-patterns",
+      "tags": ["blueprints", "editors", "dashboards", "developer-tools", "media-apps"],
+      "triggers": ["javafx app architecture example", "javafx editor app pattern", "javafx dashboard app pattern", "javafx developer tool ui"],
       "compatibility": {
         "java": "17+",
         "javafx": "21+"
@@ -60,17 +337,65 @@
   ],
   "skillGroups": [
     {
-      "name": "starter",
+      "name": "project-setup",
       "skills": [
-        "javafx-project-starter"
+        "javafx-project-starter",
+        "javafx-application-lifecycle",
+        "javafx-testing-packaging-distribution"
       ]
     },
     {
-      "name": "ui-foundations",
+      "name": "ui-core",
       "skills": [
+        "javafx-ui-layout-navigation",
         "javafx-properties-bindings",
         "javafx-fxml-controls-css",
-        "javafx-concurrency-services"
+        "javafx-concurrency-services",
+        "javafx-theming-icons-styling",
+        "javafx-localization-runtime-language"
+      ]
+    },
+    {
+      "name": "architecture",
+      "skills": [
+        "javafx-architecture-frameworks",
+        "javafx-reactive-binding-state"
+      ]
+    },
+    {
+      "name": "ui-advanced",
+      "skills": [
+        "javafx-animation-canvas-render-loop",
+        "javafx-media-webview-3d",
+        "javafx-forms-validation-preferences",
+        "javafx-data-visualization-dashboards",
+        "javafx-rich-text-documents-editors",
+        "javafx-calendar-scheduling-planning",
+        "javafx-gestures-touch-input",
+        "javafx-file-workflows-search",
+        "javafx-midi-keyboard-controller",
+        "javafx-midi-visualization"
+      ]
+    },
+    {
+      "name": "platform-integration",
+      "skills": [
+        "javafx-desktop-shell-integration",
+        "javafx-web-maps-embedded-integration",
+        "javafx-mobile-embedded-targets",
+        "javafx-midi-device-integration"
+      ]
+    },
+    {
+      "name": "tooling",
+      "skills": [
+        "javafx-devtools-inspection-debugging"
+      ]
+    },
+    {
+      "name": "app-patterns",
+      "skills": [
+        "javafx-real-world-application-patterns"
       ]
     }
   ]

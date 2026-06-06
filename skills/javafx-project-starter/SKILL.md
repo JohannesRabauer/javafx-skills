@@ -1,6 +1,6 @@
 ---
 name: javafx-project-starter
-description: Scaffold a JavaFX application with baseline structure, startup wiring, and a first scene.
+description: Scaffold a JavaFX application with baseline structure, module-aware startup wiring, and a first scene.
 triggers:
   - create javafx project
   - initialize javafx application
@@ -9,7 +9,7 @@ triggers:
 compatibility:
   java: 17+
   javafx: 21+
-category: workflow
+category: project-setup
 tags:
   - starter
   - scaffolding
@@ -85,12 +85,23 @@ public class MainView extends BorderPane {
 }
 ```
 
+```java
+module com.example.app {
+    requires javafx.controls;
+
+    exports com.example.app;
+    exports com.example.app.ui;
+}
+```
+
 ## Setup notes
 
 - Keep the first scene small and explicit; avoid premature multi-window complexity.
 - Prefer extracting views into dedicated classes early instead of building everything in
   `Application.start(...)`.
 - Document whether the project uses plain scene-graph construction, FXML, or a hybrid approach.
+- Add only the JavaFX modules the project actually uses, then expand deliberately for FXML, media,
+  WebView, or 3D.
 
 ## Gotchas
 

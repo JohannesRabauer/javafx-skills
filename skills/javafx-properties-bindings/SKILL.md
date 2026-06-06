@@ -1,15 +1,15 @@
 ---
 name: javafx-properties-bindings
-description: Build reactive JavaFX UIs with observable properties, bindings, and listeners.
+description: Build JavaFX UIs with core observable properties, bindings, and listeners.
 triggers:
-  - javafx binding
-  - observable property
-  - javafx listener
-  - reactive javafx ui
+  - javafx property binding
+  - simpleintegerproperty
+  - javafx changelistener
+  - bind bidirectional
 compatibility:
   java: 17+
   javafx: 21+
-category: core-ui
+category: ui-core
 tags:
   - properties
   - bindings
@@ -65,6 +65,8 @@ public class CounterView extends VBox {
 - Expose properties when other UI parts need to bind to them.
 - Prefer bindings for derived display values and listeners for side effects.
 - Keep domain logic out of event handlers when a presentation model would make the state clearer.
+- Use `javafx-reactive-binding-state` when the requirement moves beyond core properties into event
+  streams, reducers, or cross-client state synchronization.
 
 ## Gotchas
 

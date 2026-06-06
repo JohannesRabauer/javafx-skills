@@ -31,6 +31,18 @@ mindmap
       Bidirectional binding
       Change listeners
       Event handling
+    Architecture and Frameworks
+      MVC / MVP / MVVM / MVCI
+      Dependency injection
+      Routing and flow
+      Reactive streams
+      Client-server presentation models
+    Reactive State and Binding Extensions
+      Advanced bindings
+      EasyBind helpers
+      Event streams
+      Reducer-based state
+      Cross-JVM synchronization
     FXML and CSS
       FXMLLoader
       Controller injection
@@ -38,6 +50,30 @@ mindmap
       Resource bundles
       Stylesheets
       Custom control skinning
+    Controls and Productivity
+      Third-party controls
+      Forms and validation
+      Rich text
+      Charts and dashboards
+      Themes and icon packs
+      Scene inspection
+    Calendars and Planning
+      Calendar views
+      Schedules
+      Gantt timelines
+      Date-centric workflows
+    Theming and Branding
+      CSS builders
+      Theme packs
+      Material and fluent design
+      Icon libraries
+      Live CSS reload
+    Input and Interaction
+      Keyboard and mouse events
+      Gestures
+      Pinch-to-zoom
+      Multi-touch surfaces
+      Music keyboard input
     Concurrency
       Platform.runLater
       Task
@@ -45,6 +81,19 @@ mindmap
       Progress reporting
       Cancellation
       Error propagation
+    MIDI and Music Tools
+      javax.sound.midi integration
+      Sequencer and Receiver
+      Virtual piano controls
+      Piano-roll visualization
+      Timeline and chart views
+    Desktop Shell and Integration
+      Docking
+      MDI and tab workbenches
+      Custom stages
+      System tray
+      Preferences
+      Taskbar integration
     Animation and Rendering
       Timeline
       Transition
@@ -57,6 +106,10 @@ mindmap
       File IO
       JSON or XML mapping
       State restoration
+      Search and indexing tools
+      Import and export workflows
+      File chooser flows
+      Directory watching
     Platform Features
       Media
       WebView
@@ -64,6 +117,29 @@ mindmap
       Clipboard and drag-drop
       Printing
       Accessibility
+      Maps and geospatial UI
+      Embedded browser integration
+      Localization and resource bundles
+    Testing and Distribution
+      UI automation
+      Assertion helpers
+      Scene Builder workflow
+      jpackage and installers
+      Auto-updates
+      Browser and mobile targets
+      Embedded and device-oriented delivery
+    Developer Tooling
+      Scene graph inspection
+      CSS debugging
+      State devtools
+      IDE integrations
+      Thread-dump and diagnostics UIs
+    Real-World App Patterns
+      Editors and document tools
+      API and developer tools
+      Dashboards and analytics
+      Media apps
+      Knowledge and productivity apps
     3D
       SubScene
       PerspectiveCamera

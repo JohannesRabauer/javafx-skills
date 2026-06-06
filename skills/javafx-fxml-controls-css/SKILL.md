@@ -1,15 +1,15 @@
 ---
 name: javafx-fxml-controls-css
-description: Compose JavaFX views with FXML, controller injection, common controls, and CSS styling.
+description: Compose JavaFX views with FXML, controller injection, and control wiring.
 triggers:
   - javafx fxml
   - javafx controller
-  - javafx css
-  - style javafx controls
+  - fx:id
+  - fxml loader
 compatibility:
   java: 17+
   javafx: 21+
-category: ui
+category: ui-core
 tags:
   - fxml
   - controller
@@ -82,6 +82,7 @@ public class HomeController {
 - Keep controller classes focused on UI orchestration and delegate business logic elsewhere.
 - Use stylesheet classes instead of inline style strings for maintainability.
 - Resolve FXML resources via the classpath relative to the owning class or module.
+- Use `javafx-theming-icons-styling` for broader theme-system, icon-pack, and CSS architecture work.
 
 ## Gotchas
 
