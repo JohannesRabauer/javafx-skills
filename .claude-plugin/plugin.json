@@ -1,0 +1,23 @@
+{
+  "name": "javafx-skills",
+  "displayName": "JavaFX Skills",
+  "description": "Canonical JavaFX skills and MCP tools for Claude Code.",
+  "author": {
+    "name": "Johannes Rabauer",
+    "url": "https://github.com/JohannesRabauer"
+  },
+  "homepage": "https://github.com/JohannesRabauer/javafx-skills",
+  "repository": "https://github.com/JohannesRabauer/javafx-skills",
+  "license": "MIT",
+  "keywords": [
+    "javafx",
+    "java",
+    "desktop-ui",
+    "ai",
+    "skills",
+    "claude-code",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

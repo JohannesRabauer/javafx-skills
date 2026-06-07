@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "javafx-skills": {
+      "type": "http",
+      "url": "https://javafx-skills.onrender.com/mcp"
+    }
+  }
+}

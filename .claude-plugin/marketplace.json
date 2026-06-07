@@ -1,0 +1,19 @@
+{
+  "name": "javafx-skills-marketplace",
+  "metadata": {
+    "description": "JavaFX skills and MCP tools for Claude Code"
+  },
+  "owner": {
+    "name": "Johannes Rabauer"
+  },
+  "plugins": [
+    {
+      "name": "javafx-skills",
+      "displayName": "JavaFX Skills",
+      "source": "./",
+      "description": "Canonical JavaFX skills and MCP tools for JavaFX application development",
+      "category": "Developer Tools",
+      "tags": ["javafx", "java", "desktop-ui", "skills", "mcp"]
+    }
+  ]
+}
